@@ -68,6 +68,7 @@ body.no-scroll {
 a {
   color: var(--accent-color);
   transition: 0.3s color ease-out;
+  cursor: pointer;
 }
 a:hover {
   color: #111;
@@ -88,6 +89,11 @@ ul li, ol li {
   margin-bottom: 5px;
   outline: 0;
 }
+
+.has-sub ul li:hover {
+  background-color: #cdcdcd;
+}
+
 ul li.active a{
   color: #daa556;
 }
@@ -1094,7 +1100,7 @@ button {
 -----------------------------------------------*/
 .page-title {
   font-size: 4.5em;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 @media screen and (max-width: 768px) {
   .page-title {
@@ -1577,11 +1583,15 @@ span.prev-price {
     background: none;
     border: none;
     width: 252px;
+    height: min-content;
+    margin: 0;
+    padding: 1rem 0;
 }
 #subscribe form#form {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #6F6F6F;
+    align-items: center;
 }
 
 ::-webkit-input-placeholder {
@@ -1809,6 +1819,22 @@ footer#footer {
     cursor: pointer;
     width: 100%;
 }
+
+.slick-slide.product-style button.add-to-cart {
+  background: #000;
+  color: #fff;
+  width: 70%;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 3;
+  position: absolute;
+  bottom: 300px;
+  left: 48px;
+  z-index: 9;
+  opacity: 0;
+  transition: 0.5s ease-out;
+}
+
 .product-style button.add-to-cart {
     background: #000;
     color: #fff;
@@ -1818,7 +1844,7 @@ footer#footer {
     line-height: 3;
     position: absolute;
     bottom: 300px;
-    left: 40px;
+    left: 43px;
     z-index: 9;
     opacity: 0;
     transition: 0.5s ease-out;
@@ -1862,4 +1888,25 @@ footer#footer {
   .products-grid .product-style {
     width: 100%;
   }
+}
+
+.table-head {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; 
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; 
+  color: #374151; 
+  font-size: 0.75rem;
+  line-height: 1rem; 
+  font-weight: 600; 
+  letter-spacing: 0.05em; 
+  text-align: left; 
+  text-transform: uppercase; 
+  border-bottom-width: 2px; 
+  border-color: #E5E7EB; 
+}
+
+.data-table {
+  line-height: 1.5; 
+  min-width: 100%; 
 }

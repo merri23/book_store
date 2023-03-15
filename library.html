@@ -1,0 +1,91 @@
+<table class="data-table">
+	<thead>
+		<tr>
+			<th
+				class="table-head"
+			>
+				id
+			</th>
+			<th
+				class="table-head"
+			>
+			name_tk 
+			</th>
+			<th
+				class="table-head"
+			>
+			name_ru   
+			</th>
+			<th
+				class="table-head"
+			>
+			name_en    
+			</th>
+			<th
+				class="table-head"
+			>
+			video_path    
+			</th>
+			<th
+				class="table-head"
+			>
+			views    
+			</th>
+			<th
+				class="table-head"
+			>
+			created_at    
+			</th>
+			<th
+				class="table-head"
+			>
+			updated_at   
+			</th>
+		</tr>
+	</thead>
+		@if($quest == null)
+				<tr>
+						<td colspan="7" class="px-10 py-10 border-b border-gray-200 bg-white text-sm justify-center text-center">
+								<p class="text-gray-600 whitespace-no-wrap">Empty</p>
+						</td>
+				</tr>
+		@else
+		@foreach($quest as $v)
+		<tr>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+					<p class="text-gray-600 whitespace-no-wrap">{{$v['id']}}</p>
+			</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+				<p class="text-gray-900 whitespace-no-wrap">{{$v['question']}}</p>
+			</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+				<p class="text-gray-900 whitespace-no-wrap">{{$v['var1']}}</p>
+			</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+					<p class="text-gray-900 whitespace-no-wrap">{{$v['var2']}}</p>
+			</td>
+			<td
+				class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center"
+			>
+					<p class="text-gray-900 whitespace-no-wrap">{{$v['var3']}}</p>
+			</td>
+			<td
+				class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center"
+			>
+					<p class="text-gray-900 whitespace-no-wrap">{{$v['var4']}}</p>
+			</td>
+			<td
+				class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center"
+			>
+					<p class="text-gray-900 whitespace-no-wrap font-bold">{{$v['answer']}}</p>
+			</td>
+		</tr>
+		@endforeach
+		@endif
+		<tr>
+				<td colspan="7">
+						<button onclick="location.href='{{ route('insert') }}'" type="button" class="text-white" style="background-color:#4F46E5;width: 100%;height: 100%;padding: 10px;">+ Add new question</button>
+				</td>
+		</tr>
+	</tbody>
+</table>
